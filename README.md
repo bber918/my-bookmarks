@@ -58,6 +58,27 @@ python -m http.server 8080
 1. 在仓库 Settings → Pages 中，将 Source 设为 `main` 分支的根目录
 2. 访问 `https://你的用户名.github.io/bookmark-site/`
 
+## 快速推送（在本地执行）
+
+如果你在本地已经有这个项目，可以一键推送到 GitHub：
+
+```bash
+# 设置你的 GitHub 信息
+GITHUB_USER="你的用户名"
+TOKEN="你的 GitHub Token"
+
+# 创建仓库并推送（使用 curl）
+curl -s -X POST -H "Authorization: token $TOKEN" \
+  -H "Accept: application/vnd.github+json" \
+  https://api.github.com/user/repos \
+  -d '{"name":"my-bookmarks","description":"📚 个人收藏面板","private":false}'
+
+# 推送代码
+git remote add origin https://$TOKEN@github.com/$GITHUB_USER/my-bookmarks.git
+git branch -M main
+git push -u origin main
+```
+
 ---
 
 ✨ Happy Collecting!
