@@ -1,0 +1,14 @@
+{
+  "title": "我的收藏面板",
+  "description": "个人收藏链接管理面板",
+  "bookmarks": [
+    {
+      "url": "https://mp.weixin.qq.com/s/dbUR2zg0qA0lV0CsGwk-ag",
+      "title": "NodeJs进阶开发、性能优化指南",
+      "desc": "从前端到后端：Node.js 性能分析、压测、内存管理、C++插件、子进程、多线程、Cluster模块等后端知识详解",
+      "category": "tech",
+      "source": "前端Q 公众号",
+      "date": "2024-01-02"
+    }
+  ]
+}

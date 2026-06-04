@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 我的收藏面板</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="site-title">📚 我的收藏面板</h1>
+            <p class="site-subtitle">记录值得收藏的每一篇好文</p>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="搜索收藏..." oninput="renderBookmarks()">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <div class="filter-tabs" id="filterTabs">
+                    <button class="filter-btn active" data-filter="all">全部</button>
+                    <button class="filter-btn" data-filter="tech">技术</button>
+                    <button class="filter-btn" data-filter="life">生活</button>
+                    <button class="filter-btn" data-filter="design">设计</button>
+                    <button class="filter-btn" data-filter="other">其他</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="stats-bar">
+            <span class="stat-item">📌 总计 <strong id="totalCount">0</strong> 条收藏</span>
+            <span class="stat-item">🏷️ <strong id="categoryCount">0</strong> 个分类</span>
+        </div>
+        <div class="bookmarks-grid" id="bookmarksGrid">
+            <!-- Bookmarks rendered by JavaScript -->
+        </div>
+    </main>
+
+    <div class="add-panel" id="addPanel">
+        <div class="add-panel-header">
+            <h3>➕ 添加新收藏</h3>
+            <button class="close-btn" onclick="toggleAddPanel()">✕</button>
+        </div>
+        <div class="add-panel-body">
+            <div class="form-group">
+                <label for="addUrl">链接 URL</label>
+                <div class="input-with-btn">
+                    <input type="url" id="addUrl" placeholder="https://..." oninput="autoFetchMeta()">
+                    <button class="btn-secondary" onclick="autoFetchMeta()" title="自动抓取信息">🤖 抓取</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="addTitle">标题</label>
+                <input type="text" id="addTitle" placeholder="文章标题">
+            </div>
+            <div class="form-group">
+                <label for="addDesc">简介</label>
+                <textarea id="addDesc" rows="2" placeholder="简短描述这篇文章"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="addCategory">分类</label>
+                <select id="addCategory">
+                    <option value="tech">技术</option>
+                    <option value="life">生活</option>
+                    <option value="design">设计</option>
+                    <option value="other">其他</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="addSource">来源</label>
+                <input type="text" id="addSource" placeholder="例如：公众号、知乎、GitHub...">
+            </div>
+            <div class="add-panel-actions">
+                <button class="btn-primary" onclick="addBookmark()">✅ 添加收藏</button>
+                <button class="btn-secondary" onclick="generateCodeSnippet()">📋 生成 JSON 代码</button>
+            </div>
+            <div id="codeSnippet" class="code-snippet" style="display:none;">
+                <pre><code id="snippetContent"></code></pre>
+                <button class="btn-secondary copy-btn" onclick="copySnippet()">📋 复制</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="fab" id="fabBtn" onclick="toggleAddPanel()">
+        <span class="fab-icon">+</span>
+    </button>
+
+    <script src="app.js"></script>
+</body>
+</html>
