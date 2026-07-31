@@ -21,10 +21,18 @@
     {
       "url": "https://mp.weixin.qq.com/s/w4YFYVgzkgB0NPeM4yeVzw",
       "title": "Loop 不够用了？AI 工程下一站叫 Graph",
-      "desc": "最近一周，AI 圈又冒出一个新词：**Graph Engineering**。",
+      "desc": "Graph Engineering 设计和治理多个执行单元之间的关系，让节点有边界、边有契约、状态可恢复、结果可验证。五层梯子看 AI 工程，讲透 Graph 的本质。",
       "category": "tech",
-      "source": "前端Q",
-      "date": "2026-07-30"
+      "source": "前端Q 公众号",
+      "date": "2026-06"
+    },
+    {
+      "url": "https://mp.weixin.qq.com/s/z0MRSpXzZZb8GLVCQzTjUA",
+      "title": "30 分钟搞定个人情报站：Viking AI 搜索让前沿资讯实时推到面前",
+      "desc": "用 Viking AI Search + SearchCLI，三步搭好个人前沿技术雷达：装工具、接数据、体验产品，30分钟搞定个性化推荐+语义搜索+多轮问答。",
+      "category": "tech",
+      "source": "字节跳动技术团队 公众号",
+      "date": "2026-06"
     }
   ]
 }
